@@ -1,0 +1,22 @@
+body a.navbar-brand{
+    font-size: 30px;
+    font-family: cursive;
+}
+
+body {
+    padding-top: 80px;
+    background-color: #D7EEFF;
+}
+
+.border-bottom{
+    color: #1d0aa9;
+}
+
+.home {
+    display: table-cell !important;
+}
+  
+.list {
+    width: 250px;
+    height: 100%;
+}
