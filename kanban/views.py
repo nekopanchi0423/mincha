@@ -73,6 +73,11 @@ class ListDetailView(LoginRequiredMixin,DetailView):
     model = List
     template_name = "kanban/lists/detail.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cards'] = Card.objects.order_by('-created_at')
+        return context
+
 
 class ListUpdateView(LoginRequiredMixin, UpdateView):
     model = List

@@ -11,16 +11,18 @@
     <p>作成者：{{ list.user.username }}</p>
   </dl>
 
-  <p><a href="{% url 'kanban:cards_create_from_home' list.pk %}">コメントする</a></p>
+  <p><a class="btn btn-primary" href="{% url 'kanban:cards_create_from_home' list.pk %}" role="button">コメントする</a></p>
   <!-- <a class="btn btn-primary" href="{% url 'kanban:lists_update' list.pk  %}" role="button">編集</a> 
 
   <a class="btn btn-danger" href="{% url 'kanban:lists_delete' list.pk  %}" role="button">削除</a> -->
 
-  {% for card in list.card_set.all %}
+  {% for card in cards %}
     <div class='border-bottom'>{{ card.user.username }} {{ card.created_at }}</div>
-    <p><div class='mt-2'>{{ card.description }}</div></p>
-    <a class="btn btn-primary" href="{% url 'kanban:cards_update' card.pk  %}" role="button"><div style="text-align:right">編集</div></a>
-    <a class="btn btn-danger" href="{% url 'kanban:cards_delete' card.pk  %}" role="button"><div style="text-align:right">削除</div></a>
+    <p><div class='mt-2'>{{ card.description | linebreaks }}</div></p>
+    <!-- <a class="btn btn-primary" href="{% url 'kanban:cards_update' card.pk  %}" role="button"><div style="text-align:right">編集</div></a>
+    <a class="btn btn-danger" href="{% url 'kanban:cards_delete' card.pk  %}" role="button"><div style="text-align:right">削除</div></a> -->
+    <a href="{% url 'kanban:cards_update' card.pk  %}" role="button"><div style="text-align:right">編集</div></a></li>
+    <a href="{% url 'kanban:cards_delete' card.pk  %}" role="button"><div style="text-align:right">削除</div></a></li>
   {% endfor %}
   
 </div>
