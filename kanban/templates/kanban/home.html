@@ -1,43 +1,18 @@
 {% extends "kanban/base.html" %}
 
 {% block content %}
-
-<div class="container-fluid home">
-  <div class="row flex-nowrap">
-    <div class="card-columns">
+<div class="container">
+  <h3>カテゴリ一覧</h3>
+  <a class="btn btn-primary my-3" href="{% url 'kanban:lists_create' %}" role="button">作成</a> 
+  <div class="card-columns">
     {% for list in list_list %}
-      <div class="bg-light m-3 p-2 list">
-        <a href="{% url 'kanban:lists_detail' list.pk %}">
-          <div class="card-body">
-            <h5 class="card-title">{{ list.title }}</h5>
-          <!-- <footer>
-            <small class="text-muted">作成者: {{ list.user.username }}</small>
-          </footer> -->
-        
-            <!-- <a href="{% url 'kanban:lists_update' list.pk %}" class="text-dark"><i class="far fa-edit fa-xs"></i></a>
-            <a href="{% url 'kanban:lists_delete' list.pk %}" class="text-dark"><i class="far fa-trash-alt fa-xs"></i></a> -->
-          </div>
-        </a>
+    <a href="{% url 'kanban:lists_detail' list.pk %}" class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ list.title }}</h5>
 
-      <!-- {% for card in list.card_set.all %}
-      <a href="{% url 'kanban:cards_detail' card.pk %}" class="card m-3">
-        <div class="card-body">
-          <h6 class="card-title">{{ card.title }}
-            <a href="{% url 'kanban:cards_update' card.pk %}" class="text-dark"><i class="far fa-edit fa-xs"></i></a>
-            <a href="{% url 'kanban:cards_delete' card.pk %}" class="text-dark"><i class="far fa-trash-alt fa-xs"></i></a>
-          </h6>
-          <footer>
-            <small class="text-muted">作成者: {{ card.user.username }}</small>
-          </footer>
-        </div>
-      </a>
-      {% endfor %}
-      <a href="{% url 'kanban:cards_create_from_home' list.pk %}" class="text-dark"><i class="far fa-plus-square"></i> さらにカードを追加</a>
-      -->
       </div>
+    </a>
     {% endfor %}
-    </div>
   </div>
 </div>
-
 {% endblock %}
