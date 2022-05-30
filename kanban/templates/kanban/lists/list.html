@@ -9,8 +9,8 @@
     <a href="{% url 'kanban:lists_detail' list.pk %}" class="card">
       <div class="card-body">
         <h5 class="card-title">{{ list.title }}</h5>
-        <a href="{% url 'kanban:lists_update' list.pk %}" class="text-dark"><i class="far fa-edit fa-xs"></i></a>
-        <a href="{% url 'kanban:lists_delete' list.pk %}" class="text-dark"><i class="far fa-trash-alt fa-xs"></i></a>
+        <a class="btn btn-primary" href="{% url 'kanban:lists_update' list.pk %}">編集</a>
+        <a class="btn btn-danger" href="{% url 'kanban:lists_delete' list.pk %}">削除</a>
       </div>
     </a>
     {% endfor %}
