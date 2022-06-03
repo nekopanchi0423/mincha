@@ -5,7 +5,7 @@ body a.navbar-brand{
 
 body {
     padding-top: 80px;
-    background-color: #328fd6;
+    background-color: #83b9e2;
 }
 
 .border-bottom{
@@ -18,5 +18,5 @@ body {
   
 .list {
     width: 250px;
-    height: 50%;
+    height: 100%;
 }
