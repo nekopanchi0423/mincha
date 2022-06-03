@@ -4,16 +4,18 @@
 <div class="container">
   <h3>カテゴリ一覧</h3>
   <a class="btn btn-primary my-3" href="{% url 'kanban:lists_create' %}" role="button">作成</a> 
-  <div class="card-columns">
+  <!-- <div class="card-columns"> -->
     {% for list in list_list %}
-    <a href="{% url 'kanban:lists_detail' list.pk %}" class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{ list.title }}</h5>
-        <a class="btn btn-primary" href="{% url 'kanban:lists_update' list.pk %}">編集</a>
-        <a class="btn btn-danger" href="{% url 'kanban:lists_delete' list.pk %}">削除</a>
-      </div>
+    <!-- <a href="{% url 'kanban:lists_detail' list.pk %}" class = "card"> -->
+      <a href="{% url 'kanban:lists_detail' list.pk %}">
+      <!-- <div class="card-body"> 
+        <h5 class="card-title">{{ list.title }}</h5> -->
+        <h5>{{ list.title }}</h5>
+        <a class="text-success" href="{% url 'kanban:lists_update' list.pk %}" role = "button"><div style="text-align:right">編集</div></a>
+        <a class="text-danger" href="{% url 'kanban:lists_delete' list.pk %}" role = "button"><div style="text-align:right">削除</div></a>
+      <!-- </div> -->
     </a>
     {% endfor %}
-  </div>
+  <!-- </div> -->
 </div>
 {% endblock %}
