@@ -120,7 +120,7 @@ class CardDetailView(LoginRequiredMixin,DetailView):
 
 class CardUpdateView(LoginRequiredMixin, UpdateView):
     model = Card
-    template_name = "kanban/Cards/update.html"
+    template_name = "kanban/cards/update.html"
     form_class = CardForm
     success_url = reverse_lazy("kanban:home")
 
