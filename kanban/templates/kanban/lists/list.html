@@ -12,7 +12,7 @@
         <h5 class="card-title">{{ list.title }}</h5> -->
         <h5>{{ list.title }}</h5>
         <a class="text-success" href="{% url 'kanban:lists_update' list.pk %}" role = "button"><div style="text-align:right">編集</div></a>
-        <a class="text-danger" href="{% url 'kanban:lists_delete' list.pk %}" role = "button"><div style="text-align:right">削除</div></a>
+        <!-- <a class="text-danger" href="{% url 'kanban:lists_delete' list.pk %}" role = "button"><div style="text-align:right">削除</div></a> -->
       <!-- </div> -->
     </a>
     {% endfor %}
