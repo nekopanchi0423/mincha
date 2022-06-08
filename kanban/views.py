@@ -125,7 +125,8 @@ class CardUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy("kanban:home")
 
     def get_success_url(self):
-        return resolve_url('kanban:cards_detail', pk=self.kwargs['pk'])
+        list_pk = self.object.list.id
+        return resolve_url('kanban:lists_detail', pk=list_pk)
 
 class CardDeleteView(LoginRequiredMixin, DeleteView):
     model = Card
