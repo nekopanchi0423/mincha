@@ -17,7 +17,7 @@
   <a class="btn btn-danger" href="{% url 'kanban:lists_delete' list.pk  %}" role="button">削除</a> -->
 
   {% for card in cards %}
-    <div class='border-bottom'>{{ card.user.username }} {{ card.created_at }}</div>
+    <div class='border-bottom'>{{ forloop.revcounter }}:{{ card.user.username }} {{ card.created_at }}</div>
     <p>{{ card.title }}</p>
     <p><div class='mt-2'>{{ card.description | linebreaks }}</div></p>
     <!-- <a class="btn btn-primary" href="{% url 'kanban:cards_update' card.pk  %}" role="button"><div style="text-align:right">編集</div></a>
